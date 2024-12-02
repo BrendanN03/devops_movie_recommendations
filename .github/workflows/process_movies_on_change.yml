@@ -1,0 +1,43 @@
+name: Process Movies on CSV Change
+
+on:
+  push:
+    paths:
+      - 'data/movies.csv'
+  pull_request:
+    paths:
+      - 'data/movies.csv'
+
+jobs:
+  process-movies:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2 
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run the movie processing script
+      run: |
+        source venv/bin/activate
+        python data/process_movies_script.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add .
+        git commit -m "Automated update after processing movie data"
+        git push
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
