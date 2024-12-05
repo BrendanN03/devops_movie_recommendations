@@ -6,7 +6,7 @@ export default function Button() {
   const handleClick = async () => {
     try {
       const { message } = await getLikedMovie();
-      setLikedMovie(message)
+      setLikedMovie(message);
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);
@@ -15,8 +15,10 @@ export default function Button() {
   };
   return (
     <>
-      <div onClick={() => handleClick()}>Click me to get likedMovie</div>
-      <div>{likedMovie}</div>
+      <div className="bg-gray-200">
+        <div onClick={() => handleClick()}>Click me to get a random movie</div>
+        <div>{likedMovie}&nbsp;</div>
+      </div>
     </>
   );
 }
