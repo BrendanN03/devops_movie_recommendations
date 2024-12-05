@@ -29,3 +29,11 @@ The architecture is composed of the following components:
 ```bash
 git clone https://github.com/yourusername/devops_movie_recommendations.git
 cd devops_movie_recommendations
+```
+
+### 2. Use docker to run frontend and backend
+
+In root directory, run
+```bash
+docker-compose up
+```

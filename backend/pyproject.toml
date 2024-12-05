@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "cis1912-final-project"
+version = "0.1.0"
+description = ""
+authors = ["Maxwell Ye, Brandon Nguyen"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.1"
+uvicorn = "^0.30.0"
+openai = "^1.34.0"
+httpx = "^0.23.0"
+redis = "^5.0.8"
+pandas = "^2.2.3"
+scikit-learn = "^1.5.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^7.1.1"
+isort = "^5.9.3"
+black = "^24.4.2"
+flake8-isort = "^6.1.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
