@@ -1,6 +1,7 @@
 import pickle
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import random
 
 with open('./data/cosine_similarity_model.pkl', 'rb') as f:
     model = pickle.load(f)
@@ -38,7 +39,7 @@ def getTopSimilarToCurrMovie():
     return {"message": f"{topSimilarToCurrMovie(index)}"}
 
 def likeMovie():
-    return int(len(model) / 2)
+    return random.randint(0, len(model) - 1)
 
 def topSimilarToCurrMovie(index):
     scores = model[model.columns[index]]

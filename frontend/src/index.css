@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 .card-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
   align-items: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .card {
   /* width: 15%;
@@ -13,7 +13,7 @@
   height:100px;
   overflow: hidden;
   border-radius: 10%;
-  transform: translateX(100%);
+  /* transform: translateX(100%); */
   opacity: 0;
   transition: 150ms;
   /* display: flex; */
