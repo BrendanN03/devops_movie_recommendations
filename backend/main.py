@@ -31,7 +31,7 @@ def ping():
 def getLikedMovie():
     index = likeMovie()
     # print(f"Current movie: {model.columns[index]}")
-    return {"message": f"Current movie: {model.columns[index]}"}
+    return {"message": f"{model.columns[index]}"}
 
 @app.get("/getTopSimilarToCurrMovie")
 def getTopSimilarToCurrMovie():

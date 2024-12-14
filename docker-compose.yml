@@ -1,13 +1,14 @@
 # TODO: complete me
 services:
-  backend:
+  movie-backend:
     build: ./backend
     ports:
       - 8000:8000
-  frontend:
+  movie-frontend:
     build: ./frontend
     ports:
       - 3000:3000
-    depends_on: [backend]
+    depends_on:
+      - movie-backend
     environment:
       - VITE_API_ROOT_URL=http://localhost:8000

@@ -9,3 +9,8 @@ export const getLikedMovie = async () => {
   const data = await response.json();
   return data;
 };
+export const getMovieRec = async () => {
+  const response = await fetch(`${VITE_API_ROOT_URL}/getTopSimilarToCurrMovie`);
+  const data = await response.json();
+  return data;
+}
