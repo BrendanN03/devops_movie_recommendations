@@ -17,6 +17,12 @@
   opacity: 0;
   transition: 150ms;
   /* display: flex; */
+  background-color: lightblue;
+  padding:10px;
+}
+.card:hover {
+  background-color:aqua;
+  cursor: pointer;
 }
 .card.show {
   transform: translateX(0);
